@@ -1,22 +1,19 @@
-class Sample:
+class Student:
 
-   x = 10
+    def setValues(self, name, marks):
+        self.name = name
+        self.marks = marks
 
-   @classmethod
-   def modify(change):
-    change.x+=10
+    def getName(self):
+        return (self.name)
+        
+    def getMarks(self):
+        return (self.marks)
 
-    def display():
-        print("value of x", x)
+name = input("Enter your name ")
+marks = int(input("Enter your marks: "))
 
-s1 = Sample()
-s2 = Sample()
-
-print("value of x", s1.x)
-print("value of x", s2.x)
-
-
-s1.modify()
-print("value of x", s1.x)
-print("value of x", s2.x)
-
+s1 = Student()
+s1.setValues(name, marks)
+print(s1.getName)
+print(s1.getMarks)
