@@ -1,17 +1,32 @@
-#practicing class methods
-class Bird:
+class Bank:
 
-    num = 0
-    @classmethod
-    def initiate(change):
-        change.num += 1;
+    def __init__(self, name=""):
+        self.name = name
+        self.balance = 0
+    
+    def deposit(self, amount=0):
+        self.balance+=amount
+        print("{}, your amount after deposit is {}".format(self.name, self.balance))
 
-    @classmethod
-    def display(change, name):
-        print("{} have {} wings".format(name,change.num))
+    def withdraw(self, amount=0):
+        if(self.balance>=amount):
+            self.balance-=amount
+            print("{}, your amount after withdrawal is {}".format(
+                self.name, self.balance))
+        else:
+            print("{}, your balance is insufficient".format(self.name))
 
-Bird.initiate()
-Bird.initiate()
 
-Bird.display("pigeon")
-Bird.display("Rabbit")
+name = input("Enter your name: ")
+bcc = Bank(name)
+
+while(True):
+    print("d-deposit, w-withdraw, e-exit")
+    char = input("your choice : ")
+    if(char == 'd'): 
+        balance = int(input("Enter your balance: "))
+        bcc.deposit(balance)
+    elif(char == 'w'):
+        balance = int(input("Enter your balance: "))
+        bcc.withdraw(balance)
+    else: break
