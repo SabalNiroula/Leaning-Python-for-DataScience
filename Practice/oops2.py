@@ -1,30 +1,34 @@
-class Student:
+from abc import *
 
-    def setValues(self, name, marks):
-        self.name = name
-        self.marks = marks
-
-    def getName(self):
-        return (self.name)
-        
-    def getMarks(self):
-        return (self.marks)
+class Myclass(ABC):
+    @abstractmethod
+    def connect(self):
+        pass
     
-    class Detail:
+    @abstractmethod
+    def disconnect(self):
+        pass
 
-        def __init__(self, address):
-            self.address = address
-        
-        def display(self):
-            print("address:",self.address)
+class Oracle(Myclass):
 
-name = input("Enter your name ")
-marks = int(input("Enter your marks: "))
+    def connect(self):
+        print("connecting to the oracle database")
+    
+    def disconnect(self):
+        print("disconnecting frmo the server....")
 
-s1 = Student()
-s1.setValues(name, marks)
-print(s1.getName())
-print(s1.getMarks())
 
-dtl = Student.Detail("haraicha")
-dtl.display()
+class Sybase(Myclass):
+
+    def connect(self):
+        print("connecting to the oracle database")
+
+    def disconnect(self):
+        print("disconnecting frmo the server....")
+
+class Database:
+    str = input("Enter database name: ")
+    classname = globals()[str]
+    x = classname()
+    x.connect()
+    x.disconnect()
