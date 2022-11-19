@@ -25,7 +25,7 @@ obj1 = Sub1()
 obj1.calculate(2)
 
 obj2 = Sub2()
-obj2.calculate(3)
+obj2.calculate(4)
 
 obj1 = Sub3()
-obj1.calculate(x)
+obj1.calculate(5)
