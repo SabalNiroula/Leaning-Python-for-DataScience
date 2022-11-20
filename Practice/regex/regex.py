@@ -20,16 +20,23 @@ Mrs. Robinson
 Mr. T
 bat 
 cat mat pat
+
 CoreyMSchafer@gmail.com
 corey.schafer@university.edu
 corey-321-schafer@my-work.net
+
+https://www.google.com
+http://coreyms.com
+https://youtube.com
+https://www.nasa.gov
 '''
 
-# pattern = re.compile(r'Mr\.?\s[A-Z]\w*')
-pattern = re.compile(r'[a-zA-Z0-9.-]+@[a-zA-Z-]+\.(com|edu|net)')
+# pattern = re.compile(r'(Mr|Mrs|Ms)\.?\s[A-Z]\w*') #grabbing Mr Mrs Ms ("name")
+# pattern = re.compile(r'[a-zA-Z0-9.-]+@[a-zA-Z-]+\.(com|edu|net)') #grabbing email address
+pattern = re.compile(r'https?://(www\.)?(\w+)+(\.\w+)')  # grabbing domain name
 match = pattern.finditer(text)
 for matched in match:
-    print(matched)
+    print(matched.group(0))
 
 # with open("data.txt", 'r') as f:
 #     file = f.read()
