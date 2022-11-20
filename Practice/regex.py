@@ -1,3 +1,5 @@
+import re
+
 text = '''
 abcdefghijklmnopqurtuvwxyz
 ABCDEFGHIJKLMNOPQRSTUVWXYZ
@@ -17,3 +19,8 @@ Ms Davis
 Mrs. Robinson
 Mr. T
 '''
+
+pattern = re.compile(r'\d\d\d.\d\d\d.\d\d\d\d')
+match = pattern.finditer(text)
+for matched in match:
+    print(matched)
