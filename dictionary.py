@@ -14,4 +14,6 @@ for k in x.keys():
 name = input("Enter name to get runs: ")
 run = x.get(name, -1)
 if (run == -1):
-    print
+    print ("you entered wrong name!")
+else:
+    print("{} made {} runs".format(name, run))
