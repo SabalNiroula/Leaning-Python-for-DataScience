@@ -6,4 +6,4 @@ def display(var, **kargs):
     for x,y in kargs.items():
         print("key = {}, value = {}".format(x, y))
 
-display(10, name= "sabal niroula")
+display(10, name= "aroghya")
