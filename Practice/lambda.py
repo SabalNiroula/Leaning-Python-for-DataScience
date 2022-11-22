@@ -4,3 +4,5 @@ def square(a, b):
 
 sq = lambda x: x*x
 
+print(square(10,20))
+print(sq(20))
