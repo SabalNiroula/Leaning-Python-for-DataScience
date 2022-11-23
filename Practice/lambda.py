@@ -2,7 +2,8 @@
 def square(a, b):
     return a+b;
 
-sq = lambda x: x*x
 
-print(square(10,20))
+sq = lambda x: "Even" if x % 2 == 0 else "Odd"
+
+print(sq(10))
 print(sq(20))
